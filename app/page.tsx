@@ -1,30 +1,55 @@
 import { Box } from "./ui/components/box";
-import ProtectedRoute from "./lib/protectedRoute";
+import { Header, HeaderMobile } from "./ui/components/header";
+import { Request } from "./lib/api/request";
 
-export default function Home() {
+  type Data = {
+    user: {
+      id: string;
+      name: string;
+      email: string;
+      username: string;
+    }
+  }
+
+export default async function Home() {
+  const data = await Request<Data>("/me")
   return (
-    <div className="list-none grid grid-cols-2 gap-3 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 xl:grid-cols-4 xl:grid-rows-4">
-        <div className="fixed bottom-10 left-1/2 transform -translate-x-1/2 z-40">
-          <div
-            className="
-              w-50 h-10
-              outline-none
-              rounded-2xl
-              flex items-center justify-center
-              bg-black/90 text-white"
-          ></div>
-        </div>
+      <div className="list-none grid grid-cols-2 gap-3 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 xl:grid-cols-4 xl:grid-rows-4">
+        <Header
+          firstName={data.user.name.toUpperCase()}
+          email={data.user.email}
+          description="settings and what not"
+          href="#"
+        ></Header>
+
+        <HeaderMobile
+          firstName={data.user.name.toUpperCase()}
+          email={data.user.email}
+          href="#"
+        ></HeaderMobile>
+
         <Box
-          title="HELLO"
-          description="LOGIN TO YOUR ACCOUNT"
-          href="/login"
-          colSpan={3}
-          colSpanMobile={3}
+          title="POS"
+          description="start selling"
+          href="#"
+          colSpan={1}
+          colSpanMobile={2}
+          minHeight="md"
         ></Box>
 
         <Box
-          title="21"
-          description="DECEMBER 2025"
+          title="R$12.590,25"
+          description="total balance"
+          href="#"
+          colSpan={1}
+          colSpanMobile={1}
+          minHeight="md"
+          className="row-span-2 lg:row-start-2"
+        ></Box>
+
+        <Box
+          title="CONTACTS"
+          description="search"
           href="#"
           colSpan={1}
           colSpanMobile={1}
@@ -32,13 +57,13 @@ export default function Home() {
         ></Box>
 
         <Box
-          title="POS"
-          description="START SELLING"
+          title="PRODUCTS"
+          description="skus"
           href="#"
-          colSpan={2}
-          colSpanMobile={2}
-          minHeight="sm"
+          colSpan={1}
+          colSpanMobile={1}
+          minHeight="md"
         ></Box>
-    </div>
+      </div>
   );
 }

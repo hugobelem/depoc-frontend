@@ -1,8 +1,5 @@
-'use client';
-
 import Link from "next/link";
 import clsx from "clsx";
-import { playfair } from "@/app/ui/fonts";
 
 type ColSpan = 1 | 2 | 3 | 4;
 type MinHeight = "sm" | "md" | "lg";
@@ -45,7 +42,7 @@ export function Box({
     <Link
       href={href}
       className={clsx(
-        "ring-1 duration-300 hover:ring-black/25 flex flex-col justify-between items-start rounded-lg overflow-hidden text-left relative",
+        "ring-1 ring-zinc-100 duration-300 bg-white shadow-sm hover:shadow-md flex flex-col justify-between items-start rounded-lg overflow-hidden text-left relative min-h-37.5",
         colSpanMap[colSpanMobile],
         `sm:${colSpanMap[colSpan]}`,
         minHeightMap[minHeight],
@@ -66,28 +63,5 @@ export function Box({
 
       {children}
     </Link>
-  );
-}
-
-interface TextBoxProps {
-  title: string;
-}
-
-export function TextBox({ title }: TextBoxProps) {
-  return (
-    <div className="flex flex-col md:col-span-2 col-span-1 row-start-2 justify-between items-start rounded-lg overflow-hidden text-left relative min-h-25">
-      <div>
-        <div className="absolute ml-1 top-2 sm:top-0 right-1">
-          <p
-            className={clsx(
-              "text-[16px] md:text-[25px] lg:text-5xl text-black antialiased",
-              playfair.className
-            )}
-          >
-            {title}
-          </p>
-        </div>
-      </div>
-    </div>
   );
 }

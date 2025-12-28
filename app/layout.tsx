@@ -20,7 +20,7 @@ export default function RootLayout({
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         ></meta>
       </head>
-      <body className={`${inter.className} antialiased bg-white`}>
+      <body className={`${inter.className} antialiased bg-[#f7f7f5]`}>
         <section className="flex flex-col">
           <div className="p-4 grow overflow-auto">{children}</div>
         </section>
