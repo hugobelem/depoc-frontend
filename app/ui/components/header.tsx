@@ -33,7 +33,7 @@ export function Header({
             <p className="font-semibold text-black">
               <Link href={href} className="relative">
                 <span className="absolute inset-0"></span>
-                {firstName}
+                {firstName.split(" ")[0]}
               </Link>
             </p>
             <p className="text-zinc-500">{email}</p>
@@ -71,7 +71,7 @@ export function HeaderMobile({
             </button>
           </div>
           <div className="text-sm leading-5">
-            <p className="font-semibold text-primary">{firstName}</p>
+            <p className="font-semibold text-primary">{firstName.split(" ")[0]}</p>
             <p className="text-zinc-500">{email}</p>
           </div>
         </div>
