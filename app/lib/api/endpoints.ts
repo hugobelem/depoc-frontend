@@ -1,0 +1,22 @@
+export const TOKEN_ENDPOINT = "/token";
+export const REFRESH_ENDPOINT = "/token/refresh";
+export const USER_ENDPOINT = "/me";
+export const ACCOUNTS_ENDPOINT = "/accounts";
+export const OWNER_ENDPOINT = "/owner";
+export const BUSINESS_ENDPOINT = "/business";
+export const CONTACTS_ENDPOINT = "/contacts";
+export const CUSTOMERS_ENDPOINT = "/contacts/customers";
+export const SUPPLIER_ENDPOINT = "/contacts/suppliers";
+export const FINANCE_ACCOUNTS_ENDPOINT = "/finance/accounts";
+export const FINANCE_CATEGORIES_ENDPOINT = "/finance/categories";
+export const FINANCE_TRANSACTIONS_ENDPOINT = "/finance/transactions";
+export const MEMBERS_ENDPOINT = "/members";
+export const PRODUCTS_ENDPOINT = "/products";
+export const PRODUCTS_CATEGORIES_ENDPOINT = "/products/categories";
+export const PRODUCTS_COSTS_ENDPOINT = "/products/<id>/costs";
+export const PRODUCTS_ID_INVENTORY_ENDPOINT = "/products/<id>/inventory";
+export const PRODUCTS_INVENTORY_ENDPOINT = "/products/inventory";
+export const PRODUCTS_TRANSACTIONS_ENDPOINT =
+  "/products/<id>/inventory/transactions";
+export const PAYABLES_ENDPOINT = "/payables";
+export const RECEIVABLES_ENDPOINT = "/receivables";

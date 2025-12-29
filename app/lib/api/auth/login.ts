@@ -1,6 +1,7 @@
 import axios from "axios";
 import { BaseAPI } from "../baseAPI";
 import { setCookie } from "@/app/lib/api/auth/cookie";
+import { TOKEN_ENDPOINT } from "../endpoints";
 
 export type LoginResult =
   | { ok: true }
@@ -13,7 +14,7 @@ export async function Login(
   const api = BaseAPI.create({ withCredentials: true });
 
   try {
-    const res = await api.post("/token", { username, password });
+    const res = await api.post(TOKEN_ENDPOINT, { username, password });
     setCookie(res.data.access);
     return { ok: true };
   } catch (err) {
