@@ -8,7 +8,7 @@ export default async function Home() {
   const totalBalance = await calculateTotalBalance();
   return (
     <div className="list-none grid grid-cols-2 gap-3 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-3 xl:grid-cols-4 xl:grid-rows-4">
-      <Header description="settings and what not" href="#"></Header>
+      <Header description="settings and what not" href="/settings"></Header>
 
       <Box
         title="POS"

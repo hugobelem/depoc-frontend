@@ -16,7 +16,7 @@ export async function Header({ description, href = "#" }: HeaderProps) {
         <div className="w-full">
           <div className="relative flex items-center gap-x-4">
             <div className="flex gap-x-1 justify-center">
-              <button className="w-9 h-9 rounded-md text-zinc-700 bg-black/5 cursor-pointer">
+              <button className="w-9 h-9 rounded-md text-zinc-700 bg-black/5 cursor-default">
                 {userName[0]}
               </button>
             </div>
@@ -35,9 +35,9 @@ export async function Header({ description, href = "#" }: HeaderProps) {
 
         <div className="absolute top-0 right-0 p-4 text-xl leading-5">
           <div className="relative inline-block group">
-            <button className="text-black outline-none cursor-pointer">
+            <Link href={href} className="text-black outline-none cursor-pointer">
               ...
-            </button>
+            </Link>
           </div>
         </div>
 
