@@ -1,35 +1,13 @@
 import clsx from "clsx";
-import Link from "next/link";
 import formatBalance from "@/app/lib/utils/formatBalance";
 import { calculateTotalBalance } from "@/app/lib/api/finance/accounts/utils";
+import { BackButton } from "@/app/finance/ui/backButton";
 
 export default async function Header() {
   const totalBalance = await calculateTotalBalance();
   return (
     <div className=" relative col-span-2 rounded-lg mt-2 p-1 sm:p-4">
-      <div className="absolute top-1 left-0 sm:left-3 flex items-center">
-        <div className="flex justify-center">
-          <Link href="/" className="w-9 h-9">
-            <svg
-              className="w-6 h-6 text-zinc-400"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m15 19-7-7 7-7"
-              />
-            </svg>
-          </Link>
-        </div>
-      </div>
+      <BackButton></BackButton>
 
       <div className="absolute grid grid-cols-3 gap-3 right-0 sm:right-4 top-1 w-fit">
         <button className="outline-none rounded-full p-1.5 bg-black/80 hover:bg-black/70 cursor-pointer">
