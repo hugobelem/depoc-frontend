@@ -25,6 +25,7 @@ interface BoxProps {
   colSpanMobile?: ColSpan;
   minHeight?: MinHeight;
   className?: string;
+  titleClassName?: string;
   children?: React.ReactNode;
 }
 
@@ -36,6 +37,7 @@ export function Box({
   colSpanMobile = 1,
   minHeight = "sm",
   className,
+  titleClassName,
   children,
 }: BoxProps) {
   return (
@@ -58,7 +60,11 @@ export function Box({
       )}
 
       <div className="absolute mt-10 bottom-4 left-4">
-        <p className="text-[22px] md:text-3xl text-black">{title}</p>
+        <p
+          className={clsx("text-[22px] md:text-3xl text-black", titleClassName)}
+        >
+          {title}
+        </p>
       </div>
 
       {children}
