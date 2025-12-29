@@ -1,4 +1,4 @@
-import LoginForm from "./form";
+import LoginForm from "./ui/form";
 
 export default function page() {
   return (
