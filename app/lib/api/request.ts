@@ -8,7 +8,7 @@ export async function Request<T>(
   url: string,
   method: Method = "GET",
   data?: any
-): Promise<T> {
+): Promise<T | null> {
   const config: AxiosRequestConfig = {
     url,
     method,
@@ -23,6 +23,20 @@ export async function Request<T>(
     headers: { Authorization: access ? `Bearer ${access}` : undefined },
   });
 
-  const response = await api.request<T>(config);
-  return response.data;
+  const response = await api.request<T>(config)
+  .catch(function (err) {
+    if (err.response) {
+      console.log(err.response.data.error.message);
+    } else if (err.request) {
+      console.log(err.request);
+    } else {
+      console.log('Error', err.message);
+    }
+  });
+
+  if (response) {
+    return response.data
+  } else {
+    return null
+  }
 }
