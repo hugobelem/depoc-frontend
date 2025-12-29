@@ -4,5 +4,5 @@ import type { User } from "./model";
 
 export async function UserAPI() {
   const data = await Request<User>(USER_ENDPOINT);
-  return data.user;
+  if (data) return data.user;
 }
