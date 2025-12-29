@@ -12,7 +12,7 @@ export async function Header({ description, href = "#" }: HeaderProps) {
   const userEmail = user?.email ?? "?";
   return (
     <section>
-      <div className="rounded-lg justify-between items-end lg:flex flex-col hidden p-4 h-full bg-white relative">
+      <div className="rounded-lg justify-between items-end lg:flex flex-col hidden p-4 h-full relative">
         <div className="w-full">
           <div className="relative flex items-center gap-x-4">
             <div className="flex gap-x-1 justify-center">
